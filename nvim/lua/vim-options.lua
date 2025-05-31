@@ -27,6 +27,13 @@ vim.keymap.set("n", "<c-j>", "win.cmd j<CR>")
 vim.keymap.set("n", "<c-h>", "win.cmd h<CR>")
 vim.keymap.set("n", "<c-l>", "win.cmd l<CR>")
 
+vim.keymap.set("v", "<leader>y", '"+y', { noremap = true })
+vim.keymap.set("n", "<leader>y", '"+y', { noremap = true })
+
+vim.keymap.set("n", "<leader>p", '"+p', { noremap = true })
+vim.keymap.set("v", "<leader>p", '"+p', { noremap = true })
+
+
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"

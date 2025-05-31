@@ -42,11 +42,11 @@ alias :q="exit"
 alias :qa="exit"
 
 ## KEY BINDS ##
-bindkey "^K" history-search-backward
-bindkey "^J" history-search-forward
-bindkey "^L" forward-char
-bindkey "^H" backward-char
-bindkey "^N" clear-screen
+bindkey "^[k" history-search-backward
+bindkey "^[j" history-search-forward
+bindkey "^[l" forward-char
+bindkey "^[h" backward-char
+bindkey "^[n" clear-screen
 
 
 
