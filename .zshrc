@@ -22,12 +22,18 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-#export EDITOR = "nvim"
+export EDITOR="nvim"
 export ARCHFLAGS="-arch $(uname -m)"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+## PATH ##
+export PATH="/home/deyan/.cargo/bin:$PATH"
+export PATH="/home/deyan/.local/bin/:$PATH"
+
 
 ### ALIAS ###
 
@@ -59,7 +65,18 @@ compinit
 ## JULIAUP config ##
 path=('/home/deyan/.juliaup/bin' $path)
 export PATH
-## JULIAUP finish ##
 
-export PATH="/home/deyan/.cargo/bin:$PATH"
-export PATH="/home/deyan/.local/bin/:$PATH"
+## YAZI config ##
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+## BAT (better Cat)
+export BAT_THEME=tokyonight_night
+
+
