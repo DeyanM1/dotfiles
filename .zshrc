@@ -10,7 +10,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # Set theme
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 HIST_STAMPS="dd.mm.yyyy"
 
@@ -38,9 +38,6 @@ export PATH="/home/deyan/.local/bin/:$PATH"
 ### ALIAS ###
 
 alias cl="clear"
-alias update= "sudo apt update"
-alias upgrade= "sudo apt upgrade"
-alias ls="eza --icons=always"
 alias :q="exit"
 alias :qa="exit"
 
@@ -53,10 +50,38 @@ bindkey "^N" clear-screen
 
 
 
-eval "$(zoxide init zsh)"
-alias cd="z"
+
 
 ### PACKAGES ###
+
+
+
+## FZF
+eval "$(fzf --zsh)"
+
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+
+
+
 
 ## compinit ##
 autoload -U compinit
@@ -79,4 +104,14 @@ function y() {
 ## BAT (better Cat)
 export BAT_THEME=tokyonight_night
 
+## EZA
+alias ls="eza --icons=always"
 
+## The Fuck
+# thefuck alias
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
+## Zoxide
+eval "$(zoxide init zsh)"
+alias cd="z"
