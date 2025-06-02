@@ -10,6 +10,7 @@ return {
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {desc= "Find Files"})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {desc= "Grep Files"})
       vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {desc = "Recent Files"})
+      vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "Search in current file" })
 
       vim.keymap.set("n", "<leader>gs", builtin.git_status, {desc = "Git status"})
       vim.keymap.set("n", "<leader>gc", builtin.git_commits, {desc = "Git commits"})

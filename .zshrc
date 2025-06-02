@@ -33,7 +33,7 @@ export ARCHFLAGS="-arch $(uname -m)"
 ## PATH ##
 export PATH="/home/deyan/.cargo/bin:$PATH"
 export PATH="/home/deyan/.local/bin/:$PATH"
-
+export PATH="/home/deyan/bin:$PATH"
 
 ### ALIAS ###
 
@@ -115,3 +115,4 @@ eval $(thefuck --alias fk)
 ## Zoxide
 eval "$(zoxide init zsh)"
 alias cd="z"
+alias ncd="/bin/cd"
