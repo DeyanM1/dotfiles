@@ -23,4 +23,4 @@ delete_symlink "$HOME/.config/alacritty"
 delete_symlink "$HOME/.config/nvim"
 delete_symlink "$HOME/.config/yazi"
 delete_symlink "$HOME/.config/bat"
-
+delete_symlink "$HOME/.config/waybar"
