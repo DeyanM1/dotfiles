@@ -6,7 +6,7 @@ delete_symlink() {
 
   if [ -L "$TARGET" ]; then
     echo "Deleting symbolic link: $TARGET"
-    rm "$TARGET"
+    rm -r "$TARGET"
   else
     echo "Not a symbolic link: $TARGET"
   fi
@@ -23,4 +23,9 @@ delete_symlink "$HOME/.config/alacritty"
 delete_symlink "$HOME/.config/nvim"
 delete_symlink "$HOME/.config/yazi"
 delete_symlink "$HOME/.config/bat"
+delete_symlink "$HOME/.config/hypr"
 delete_symlink "$HOME/.config/waybar"
+delete_symlink "$HOME/.config/kitty"
+delete_symlink "$HOME/.config/wofi"
+
+delete_symlink "$HOME/.config/wallpaper"
