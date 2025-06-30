@@ -20,6 +20,11 @@ return {
 
 
       local lspconfig = require("lspconfig")
+      lspconfig.kotlin_language_server.setup({
+        capabilities = capabilities,
+        filetypes = {"kotlin"},
+        cmd = { "kotlin-language-server" },
+      })
       lspconfig.lua_ls.setup({capabilities = capabilities})
       lspconfig.marksman.setup({capabilities = capabilities})
       lspconfig.pyright.setup({
