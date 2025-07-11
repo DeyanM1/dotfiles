@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR="nvim"
 export ARCHFLAGS="-arch $(uname -m)"
+export DIALOGRC="~/.dialogrc"
 
 
 

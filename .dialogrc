@@ -1,0 +1,16 @@
+use_shadow = NO
+screen_color = black
+shadow_color = black
+dialog_color = white
+title_color = white
+border_color = white
+button_active_color = black
+button_inactive_color = white
+button_key_active_color = black
+button_key_inactive_color = white
+button_label_active_color = white
+button_label_inactive_color = white
+inputbox_color = white
+inputbox_border_color = white
+searchbox_color = white
+searchbox_title_color = white
