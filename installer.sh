@@ -64,7 +64,7 @@ apps[hyprland]="$dotConfig/hypr:$dest_dotConfig/hypr"
 apps[waybar]="$dotConfig/waybar:$dest_dotConfig/waybar"
 apps[kitty]="$dotConfig/kitty:$dest_dotConfig/kitty"
 apps[wofi]="$dotConfig/wofi:$dest_dotConfig/wofi"
-
+apps[ml4w]="$dotConfig/ml4w:$dest_dotConfig/ml4w"
 ## OTHER
 apps[wallpapers]="$dotFiles/wallpaper:$dest_dotConfig/wallpaper"
 
